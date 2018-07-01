@@ -55,9 +55,9 @@
 	
 	window.makeDroppable = makeDroppable;
 	
-	//makeDroppable(window.document.querySelector('.droppable'));
-	
 })(this);
+
+
  
   (function(window) {
     makeDroppable(window.document.querySelector('.droppable'), function(files) {
@@ -71,6 +71,8 @@
 //      }
     });
   })(this);  
+  
+  
 
 $(document).ready(function(){
 
@@ -146,18 +148,18 @@ $(document).ready(function(){
 		}, 500);
 	});
 	
-	$(".icons img").click(function(){
-		var src = $(this).attr('src');
+	$(".icons a").click(function(){
+		var src = $(this).children('img').attr('src');
 		$('#avatar-front').attr('src', src);
-		$(".icons img").removeClass('active');
+		$(".icons a").removeClass('active');
 		$(this).addClass('active');
 		drawMeme();
 	});
 	
-	$(".backgrounds img").click(function(){
-		var src = $(this).attr('src');
+	$(".backgrounds a").click(function(){
+		var src = $(this).children('img').attr('src');
 		$('#avatar-back').attr('src', src);
-		$(".backgrounds img").removeClass('active');
+		$(".backgrounds a").removeClass('active');
 		$(this).addClass('active');
 		drawMeme();
 	});
@@ -174,17 +176,30 @@ $(document).ready(function(){
 	// init at startup
 	drawMeme();
 	
+	
+	/**
+	 * TOOLTIPS
+	 */
 	$(function () {
 	  $('[data-toggle="tooltip"]').tooltip()
-	})	
+	})
+	
+	/**
+	 * SWIPER
+	 */
+	var swiper = new Swiper('.swiper-container', {
+		slidesPerView: 6,
+		slidesPerColumn: 2,
+		spaceBetween: 10,
+		mousewheel: true,
+		keyboard: {
+			enabled: true,
+		},
+		freeMode: true,
+		scrollbar: {
+			el: '.swiper-scrollbar',
+			draggable: true,
+		},
+	});		
 
-});
-
-
-
-
-var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 6,
-  slidesPerColumn: 2,
-  spaceBetween: 30,
 });
