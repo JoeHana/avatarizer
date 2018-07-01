@@ -45,7 +45,7 @@ if( file_exists('app/functions.php' ) )
             
             	<div class="row">
                 
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-sm-12 col-md-7">
                     
                         <div class="logo">
                         
@@ -68,7 +68,7 @@ if( file_exists('app/functions.php' ) )
                         
                     </div>
                     
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-sm-12 col-md-5">
                     
                     	<div class="menu">
                         	<ul>
@@ -131,13 +131,15 @@ if( file_exists('app/functions.php' ) )
                                     <div class="droppable droppable-inactive"></div>
                                 <?php } ?>
 
-                                <img id="avatar-back" class="avatar-back" src="content/images/background.jpg" alt="" />
+                                <img id="avatar-back" class="avatar-back" src="content/images/backgrounds/default.jpg" alt="" />
                                 <img id="avatar-front" class="avatar-front" src="content/images/icons/icon-light.png" alt="" />
                                                             
                             </div>
                             
                             <?php if ( isset( $_GET['skylord'] ) && $_GET['skylord'] == TRUE ) { ?>
-                                <input type="file" class="form-control" id="file-upload" />
+                                <div class="file-upload-wrap">
+                                    <input type="file" class="form-control" id="file-upload" />
+                                </div>
 							<?php } ?>
                             
                             <div class="download">
@@ -163,7 +165,7 @@ if( file_exists('app/functions.php' ) )
                                 <div class="row">
                                 
                                     <div class="col col-xs-12 col-sm-4 col-md-2">
-                                        <a href="#" class="thumbnail icon-light">
+                                        <a href="#" class="thumbnail icon-light active">
                                             <img src="content/images/icons/icon-light.png" alt="" />
                                         </a>
                                     </div>
@@ -191,7 +193,13 @@ if( file_exists('app/functions.php' ) )
                                     
                                         <div class="swiper-container">
                                             <div class="swiper-wrapper">
-                                                
+                                            
+                                                <div class="swiper-slide">
+                                                    <a href="#" class="thumbnail active">
+                                                        <img src="content/images/backgrounds/default.jpg" alt="" />
+                                                    </a>
+                                                </div>
+
 												<?php if ( ( isset( $_GET['pro'] ) && $_GET['pro'] == 'skylord' ) || ( isset( $_GET['skylord'] ) && $_GET['skylord'] == TRUE ) ) { ?>
 													<?php foreach( avatarizer_backgrounds_pro() as $file ) { ?>
                                                         <div class="swiper-slide">

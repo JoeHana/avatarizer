@@ -148,7 +148,8 @@ $(document).ready(function(){
 		}, 500);
 	});
 	
-	$(".icons a").click(function(){
+	$(".icons a").click(function(e){
+		e.preventDefault();
 		var src = $(this).children('img').attr('src');
 		$('#avatar-front').attr('src', src);
 		$(".icons a").removeClass('active');
@@ -156,7 +157,8 @@ $(document).ready(function(){
 		drawMeme();
 	});
 	
-	$(".backgrounds a").click(function(){
+	$(".backgrounds a").click(function(e){
+		e.preventDefault();
 		var src = $(this).children('img').attr('src');
 		$('#avatar-back').attr('src', src);
 		$(".backgrounds a").removeClass('active');
@@ -200,6 +202,24 @@ $(document).ready(function(){
 			el: '.swiper-scrollbar',
 			draggable: true,
 		},
+		breakpoints: {
+			1200: {
+				slidesPerView: 6,
+				spaceBetween: 10,
+			},
+			1024: {
+				slidesPerView: 5,
+				spaceBetween: 10,
+			},
+			768: {
+				slidesPerView: 4,
+				spaceBetween: 10,
+			},
+			576: {
+				slidesPerView: 3,
+				spaceBetween: 10,
+			}
+		}
 	});		
 
 });

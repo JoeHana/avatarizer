@@ -11,6 +11,26 @@ body {
 }
 
 /**************************************************
+ * BOOTSTRAP CUSTOMS
+ **************************************************/
+
+.container-fluid {
+    max-width: 90%;
+}
+    
+@media (min-width: 576px) {
+    .container-fluid {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-fluid {
+        max-width: none;
+    }
+}
+
+/**************************************************
  * TYPO
  **************************************************/
 h1, h2, h3, h4, h5, h6, p {
@@ -139,13 +159,9 @@ input[type="file"] {
     left: 0;
     right: 0;
     z-index: 1;
-    background: rgba( 0, 0, 0, .75 );
-    opacity: .25;
+    text-align: center;
+    background: rgba( 20, 20, 20, 1 );
     transition: all .2s;
-}
-
-.header:hover, .footer:hover {
-    opacity: 1;
 }
 
 .header {
@@ -158,8 +174,16 @@ input[type="file"] {
 
 .main {
     max-width: 1200px;
-    padding: 200px 0;
+    padding: 200px 0 100px;
     margin: auto;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .header,
+    .main {
+        text-align: inherit;
+    }
 }
 
 /**************************************************
@@ -175,14 +199,16 @@ input[type="file"] {
  **************************************************/
  
 .menu {
-    float: right;
-    margin-top: 5px;
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .menu ul {
     padding: 0;
     margin: 0;
+    display: inline-block;
     list-style: none;
+    text-align: center;
 }
 
 .menu ul li {
@@ -202,6 +228,25 @@ input[type="file"] {
 
 .menu ul li a i {
     line-height: 24px;
+}
+
+@media (min-width: 768px) {
+    .menu {
+        width: auto;
+        float: right;
+        margin-top: 5px;
+        opacity: 0.5;
+        transition: all .2s;
+    }
+    
+    .header:hover .menu {
+        opacity: 1;
+    }
+    
+    .menu ul {
+        display: inherit;
+        text-align: inherit;
+    }
 }
 
 /**************************************************
@@ -333,7 +378,13 @@ input[type="file"] {
     width: 300px;
     height: 300px;
     position: relative;
-    margin: 0;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .avatar-wrap {
+        margin: 0;
+    }
 }
 
 .avatar-wrap .img-thumbnail {
@@ -341,7 +392,7 @@ input[type="file"] {
     height: 300px;
     padding: 0;
     border: 1px solid #666;
-    background: url(../../../content/images/default.jpg) repeat;
+    background: url(../img/canvas.jpg) repeat;
     border-radius: 0;
 }
 
@@ -351,6 +402,21 @@ input[type="file"] {
 	left: -10000px;
 	top: -10000px;
 }
+
+/**************************************************
+ * FILE UPLOAD
+ **************************************************/
+
+.file-upload-wrap .form-control {
+    margin: 1rem auto;
+}
+
+@media (min-width: 768px) {
+    .file-upload-wrap .form-control {
+        margin: 1rem 0;
+    }
+}
+
 
 /**************************************************
  * DROPPABLE
@@ -389,12 +455,10 @@ input[type="file"] {
 
 .pro-mode-active,
 .skylord-mode-active {
-    margin-left: 2rem;
+    display: block;
     font-size: 0.8rem;
-    letter-spacing: .5rem;
+    letter-spacing: .25rem;
     text-transform: uppercase;
-    position: relative;
-    top: 2px;
 }
 
 .pro-mode-active {
@@ -403,6 +467,26 @@ input[type="file"] {
 
 .skylord-mode-active {
     color: #39F;
+}
+
+@media (min-width: 576px) {
+    .pro-mode-active,
+    .skylord-mode-active {
+        margin-left: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .pro-mode-active,
+    .skylord-mode-active {
+        display: inline-block;
+        margin-left: 2rem;
+        font-size: 0.8rem;
+        letter-spacing: .25rem;
+        text-transform: uppercase;
+        position: relative;
+        top: 2px;
+    }
 }
 
 /**************************************************
@@ -452,6 +536,7 @@ input[type="file"] {
 
 .swiper-container .swiper-wrapper {
     max-height: 200px;
+    height: 160px;
 	cursor:-webkit-grab;
 	cursor:-moz-grab;
     cursor:grab;
