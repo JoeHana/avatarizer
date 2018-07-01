@@ -211,6 +211,7 @@ if( file_exists('app/functions.php' ) )
                                                 <?php } ?>
                                                 
                                             </div>
+                                            <div class="swiper-scrollbar"></div>
                                         </div>
                                          
                                     </div> 
