@@ -81,23 +81,51 @@ input[type="file"] {
  * THUMBNAILS
  **************************************************/
 
-.thumbnail img{
-    border: 1px solid #666;
+.thumbnail {
     opacity: .7;
+    border: 1px solid #666;
+    position: relative;
     transition: all .2s;
 }
 
-.thumbnail:hover img {
+.thumbnail:after {
+    content: '\f058';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    color: #CF9;
+    font-size: 1.8rem;
+    font-family: "Font Awesome 5 Free";
+    text-align: center;
+    line-height: 50px;
+
+    background: rgba(0,0,0,0);
+    opacity: 0;
+    transition: all .2s;
+    
+}
+
+.thumbnail.active:after {
     opacity: 1;
+    background: rgba(0,0,0,.5);
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    opacity: 1;
+}
+
+.thumbnail.active {
+    border-color: rgba(204,255,102, .5);
 }
 
 .thumbnail img {
     max-width: 50px;
-}
-
-.thumbnail img.active {
-    opacity: 1;
-    border: 1px solid rgba(255, 58, 45, 1);
 }
 
 /**************************************************
@@ -422,15 +450,15 @@ input[type="file"] {
     margin-right: auto;
 }
 
-.swiper-wrapper {
-    max-height: 150px;
+.swiper-container .swiper-wrapper {
+    max-height: 200px;
 	cursor:-webkit-grab;
 	cursor:-moz-grab;
     cursor:grab;
 
 }
 
-.swiper-slide {
+.swiper-container .swiper-wrapper .swiper-slide {
     height: 52px;
     
     display: -webkit-box;
@@ -439,6 +467,15 @@ input[type="file"] {
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
+}
+
+.swiper-container .swiper-scrollbar {
+    opacity: 0;
+    transition: all .2s;
+}
+
+.swiper-container:hover .swiper-scrollbar {
+    opacity: 1;
 }
 
 /**************************************************
